@@ -16,7 +16,7 @@ pip install -r transportation/requirements.txt
 
 # Gunicorn conf
 
-sudo cp transportation/config/gunicorn.service /etc/systemd/system/
+sudo cp transportation/deployment/gunicorn.service /etc/systemd/system/
 cd /var/log/
 sudo mkdir gunicorn
 cd gunicorn/
@@ -36,7 +36,7 @@ echo "Gunicorn installed"
 
 # Nginx conf
 
-sudo cp transportation/config/nginx_dev /etc/nginx/sites-available/transportation
+sudo cp transportation/deployment/nginx_dev /etc/nginx/sites-available/transportation
 sudo ln -s /etc/nginx/sites-available/transportation /etc/nginx/sites-enabled
 
 sudo openssl req -x509 -nodes -days 358000 -newkey rsa:2048 -keyout /etc/ssl/private/transportation.key -out /etc/ssl/certs/transportation.crt
